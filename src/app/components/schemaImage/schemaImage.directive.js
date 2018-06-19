@@ -25,7 +25,7 @@ class schemaImageController {
 
     if (!this.image) {
       //TODO placeholder
-      this.imageUrl = "";
+      this.imageUrl = "http://w3c.github.io/opentrack-cg/examples/schemaorg/images/track.png";
     } else if (angular.isString(this.image)) {
       this.imageUrl = this.image;
     } else {

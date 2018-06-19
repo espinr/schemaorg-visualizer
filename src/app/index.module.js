@@ -1,6 +1,6 @@
 /* global moment:false */
 
-import { config, keys } from './index.config';
+import { configLogProvider, keys, configThemingProvider } from './index.config';
 import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
@@ -29,7 +29,8 @@ angular.module('schemaVisualizer', ['ngAria', 'ngResource', 'ngMaterial', 'ngMap
   .constant('moment', moment)
   .constant('googleKey', keys.googleKey)
   .value('graphs', graphs)
-  .config(config)
+  .config(['$logProvider', configLogProvider])
+  .config(['$mdThemingProvider', configThemingProvider])
   .run(runBlock)
   .controller('MainController', MainController)
   .directive('acmeNavbar', NavbarDirective)

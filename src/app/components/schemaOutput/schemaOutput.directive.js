@@ -93,7 +93,7 @@ class schemaOutputController {
     var address = this.$filter('location')(input, 'fullAddress');
     var name = input.name;
     if (name.lastIndexOf('-') > -1) name = name.substr(name.lastIndexOf('-') + 1);
-    return encodeURI("https://www.google.fr/maps/place/" + name + " " + address);
+    return encodeURI("https://www.google.com/maps/place/" + name + " " + address);
   }
 
   sameDate(a, b) {

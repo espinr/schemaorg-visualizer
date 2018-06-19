@@ -17,7 +17,7 @@
     "eslint-loader": "~1.1.0",
     "eslint-plugin-angular": "~0.12.0",
     "estraverse": "~4.1.0",
-    "gulp": "~3.9.0",
+    "gulp": "^3.9.1",
     "gulp-angular-templatecache": "~1.8.0",
     "gulp-autoprefixer": "~3.0.2",
     "gulp-cssnano": "~2.1.1",
@@ -59,6 +59,10 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
+    "angular": "1.7.0",
+    "angular-animate": "1.7.0",
+    "angular-messages": "1.7.0",
+    "angular-resource": "1.7.0",
     "schema.org": "^1.6.1"
   }
 }

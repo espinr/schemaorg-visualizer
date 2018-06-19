@@ -1,11 +1,17 @@
-export function config ($logProvider) {
+export function configLogProvider ($logProvider) {
   'ngInject';
   // Enable log
   $logProvider.debugEnabled(true);
 }
 
+export function configThemingProvider ($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('pink')
+    .accentPalette('orange');
+}
+
 export const keys = {
-  googleKey: 'AIzaSyCRrWk5ZBS-g9P4FSgymP65ZXyqOp-Xa0w', // key for Google Maps
-  mlabKey: 'kSJJhR72ClYzcRYmrhpeXlhbXddPE6kf', // key for mLab
-  mlabDbName: 'schema-visualizer' // database name on mLab
+  googleKey: 'AIzaSyAQhRbXXRPGPdnBVkZOJRTFVG4cq6tHbkg', // key for Google Maps
+  mlabKey: 'Qf0_sBJlCJOmF1LfKw5zjVUKr6aU3KWR', // key for mLab
+  mlabDbName: 'opentrack-ld-viz' // database name on mLab
 };

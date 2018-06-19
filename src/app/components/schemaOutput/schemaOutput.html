@@ -1,6 +1,6 @@
 <article ng-hide="outCtrl.graphs.length > 0" class="waiting-div">
   <md-icon>keyboard</md-icon>
-  <h2>Waiting your data</h2>
+  <h2>Waiting for your data</h2>
 </article>
 
 <article ng-show="outCtrl.graphs.length > 0" class="permalink-cont">
@@ -11,7 +11,7 @@
   </md-button>
 </article>
 
-<article ng-repeat="comp in outCtrl.graphs | isSchemaInstanceOf: 'Event'">
+<article ng-repeat="comp in outCtrl.graphs | isSchemaInstanceOf: 'SportsCompetitionEvent'">
   <md-card>
     <div layout="row" class="double-cover">
       <schema-image flex ng-if="comp.image" img="comp.image" class="md-card-image"></schema-image>
@@ -40,6 +40,14 @@
         <p ng-show="comp.description">
           <span class="cr-on">{{comp.description | normalizeValue }}</span>
         </p>
+        <p>
+          <div ng-show="comp.organizer">
+            <small class="light">Organized by</small> <span class="cr-on">{{comp.organizer | normalizeValue }}</span>
+          </div>
+          <div ng-show="comp.sponsor">
+            <small class="light">Sponsored by</small> <span class="cr-on">{{comp.sponsor | normalizeValue }}</span>
+          </div>  
+        </p>
 
         <p>
           <a ng-href="{{outCtrl.googleSearchLink(comp.location.name)}}">{{comp.location.name}}</a>
@@ -47,6 +55,7 @@
             {{comp.location | location: fullAddress}}
           </span>
         </p>
+
 
         <h3 ng-show="comp.offers">Tickets</h3>
         <table ng-show="comp.offers">
